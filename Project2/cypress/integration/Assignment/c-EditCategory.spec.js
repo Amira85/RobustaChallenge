@@ -14,15 +14,13 @@ describe('CypressChallenge', function() {
 	cy.get('.col-sm-12 > #datatable-ajax > thead > tr > .sorting_asc').click()
 	//wait for sorting to apply before clicking
 	cy.wait(500)
+	
 	//Clicks Edit in the first row
     cy.get('#datatable-ajax > tbody > .odd:nth-child(1) > td > .m-portlet__nav-link').click()
-	//Clicks Edit in Even rows
-	//cy.get('#datatable-ajax > tbody > .even:nth-child(2) > td > .m-portlet__nav-link').click()
 	
-    
- 
     cy.get('.m-portlet__body > .form-body > .form-group:nth-child(1) > .col-md-6 > #name').click()
-    //Read the Edit Data from External file
+    
+	//Read the Edit Data from External file cypress\fixtures\EditCategory.json
     cy.fixture('EditCategory.json').then(function(json){
 	
       //Clear the textbox before entering new text

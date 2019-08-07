@@ -25,7 +25,7 @@ function FileListItem(a) {
   
     cy.get('.m-portlet__body > .form-body > .form-group:nth-child(1) > .col-md-6 > #name').click()
  
-    //Read the new data from External file
+    //Read the Add data from External file cypress\fixtures\AddCategory.json
 	cy.fixture('AddCategory.json').then(function(json){
 	  
 	  cy.get('.m-portlet__body > .form-body > .form-group:nth-child(1) > .col-md-6 > #name').type(json.EnglishName)
